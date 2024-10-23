@@ -1,0 +1,31 @@
+p {
+    color: red;
+  }
+
+th {
+      background-color:midnightblue;
+      color: white;
+    }
+table {
+      border-collapse: collapse;
+      }
+
+tr:hover {background-color: coral;}
+
+html {
+  background-color: #b0bac3;
+}
+
+body {
+  background-image: url("static/image.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+h1,h2 {
+  margin: 0;
+  padding: 10px 0;
+  color: #00539f;
+  text-shadow: 1px 1px 1px black;
+}

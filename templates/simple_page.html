@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Welcome, click on the button correponding to your needs!</h1>
+    <button onclick="location.href='/table/customer'">Customer Table</button>
+    <button onclick="location.href='/table/customer_order'">Customer Order Table</button>
+    <button onclick="location.href='/table/order_detail'">Order Detail Table</button>
+    <button onclick="location.href='/table/product'">Product Table</button>
+    <button onclick="location.href='/table/all'">Join All Tables</button>
+    <h2>Here is your table {{name}}:</h2>
+    {% if result %}
+        <table border="2">
+            <thead>
+                <tr>
+                    {% for col in colonlist %}
+                        <th>{{ col }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in result %}
+                    <tr>
+                        {% for item in row %}
+                            <td>{{ item }}</td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No data available.</p>
+    {% endif %}
+</body>
+</html>
